@@ -1,0 +1,96 @@
+.headlinePromo{
+    margin-top: 60px;
+    background-color: #84212b;
+    min-height: 180px;
+}
+
+.SectionHeader{
+    position: fixed;
+    margin-top: -50px;
+    width: 400px;
+    margin-left: 500px;
+    margin-right: auto;
+    align-content: center !important;
+    z-index: 999 !important;
+}
+
+.searchHeader {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+
+.input-icons i { 
+    position: absolute; 
+} 
+    
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px; 
+} 
+    
+.icon { 
+    padding: 10px; 
+    min-width: 50px; 
+    text-align: center; 
+    font-size: 20px;
+} 
+
+.courselPromo{
+    margin-top: -220px;
+    z-index: 10;
+}
+
+.produkPilihan{
+    box-shadow: 0 0 5px #dfdfdf;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.produk-item {
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 5px 10px 0px;
+    text-align: center;
+}
+
+.produk-item img{
+    width: 40px;
+    object-fit: fill;
+    min-height: 40px;
+    clear: both;
+}
+
+.produk-tittle{
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.footerUl{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer_title_body{
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .SectionHeader{
+        background-color: #84212b;
+        padding: 10px;
+        margin-top: 0;
+        margin-left: 0;
+        position: fixed;
+        width: 100%;
+    }
+    
+}
