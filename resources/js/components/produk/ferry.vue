@@ -55,7 +55,7 @@
               </div>
               <div class="col-md-2">
                 <div class="searchproduk">
-                  <el-button type="warning" icon="el-icon-search">Search</el-button>
+                  <el-button type="warning" icon="el-icon-search" @click="ferryshow()">Search</el-button>
                 </div>
               </div>
             </div>
@@ -67,8 +67,8 @@
       <section class="">
           <div class="container">
             <br/><br/>
-              <div class='row'><h5>Result</h5>
-              <div class="col-md-12">
+              <div class='row' v-loading="isLoading" v-if="show"><h5 class="no-margin">Result</h5>
+              <div class="col-md-12" >
                 <el-row :gutter="5">
                     <el-col :md="18">
                       <el-card class="box-card" v-for="(h,hIndex) in ferry" :key="hIndex" style="margin-bottom:10px">
@@ -105,6 +105,8 @@ import { Carousel, Slide } from 'vue-carousel';
 export default {
   data () {
    return {
+     isLoading : false,
+     show : false,
      url : {
        promo : urlBase.urlWeb+'/public/img/promo',
        produk : urlBase.urlWeb+'/public/img/produk',
@@ -166,7 +168,16 @@ export default {
       }
   },
   mounted() {
-    this.links = this.loadAll();
+
+  },
+  methods:{
+    ferryshow(){
+       this.isLoading = true
+       this.show = true
+      setTimeout(()=>{
+        this.isLoading = false
+      },1000);
+    }
   },
   components: {
     Carousel,

@@ -66,7 +66,7 @@
         <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
             <ul class=" nav navbar-nav menu">
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Login
+                    <a class="nav-link " href="<?php echo e(url('/login')); ?>">Login
                     </a>
                 </li>
                 <li class="nav-item">
