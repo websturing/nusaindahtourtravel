@@ -1,65 +1,40 @@
 <template>
-    <div class="page-content login-cover">
+<div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <el-row :gutter="5">
+            <el-col :md="10" :offset="7">
+                 <el-card class="box-card" style="margin-bottom:10px">
+                     <center><h4>login With Your Account</h4></center>
+                     <br/>
+                        <el-button type="primary" class="width100">Login with Facebook</el-button>
+                        <el-button type="default" class="width100">Login with google</el-button>
+                     <el-divider>Or With</el-divider>
+                     <el-input
+                        placeholder="Username"
+                        v-model="input"
+                        class="width100"
+                        clearable>
+                     </el-input>
+                     <el-input
+                        placeholder="Password"
+                        class="width100"
+                        v-model="input"
+                        clearable>
+                    </el-input>
+                    <el-button type="warning" class="width100">login</el-button>
 
-		<!-- Main content -->
-		<div class="content-wrapper">
 
-			<!-- Content area -->
-			<div class="content d-flex justify-content-center align-items-center">
+                 </el-card>
+            </el-col>
 
-				<!-- Login form -->
-				 <el-form :model="login" ref="login">
-						<div class="tab-content card-body">
-							<div>
-								<div class="text-center mb-3">
-									<img :src="url.assets+'/images/logo.png'" width="80px">
-									<h5 class="mb-0">SIJEMPOL</h5>
-									<span class="d-block text-muted">2020</span>
-								</div>
-                                <el-form-item 
-                                    prop="username"
-                                    :rules="{ required: true, message: 'field tidak boleh kosong', trigger: 'blur' }">
-                                    <el-input
-                                        placeholder="Username"
-                                        prefix-icon="icon-user"
-                                        v-model="login.username"
-                                        :autofocus="true"
-                                        @keyup.enter.native="Submit()"
-                                        clearable>
-                                    </el-input>
-                                </el-form-item>
-
-                                <el-form-item 
-                                    prop="password"
-                                    :rules="{ required: true, message: 'field tidak boleh kosong', trigger: 'blur' }">
-                                    <el-input
-                                        placeholder="password"
-                                        prefix-icon="icon-lock2"
-                                        v-model="login.password"
-                                        type="password"
-                                        @keyup.enter.native="Submit()"
-                                        clearable>
-                                    </el-input>
-                                </el-form-item>
-								
-								<div class="form-group pull-right">
-                                    <div style="width:100% !important">
-									    <el-button type="primary" :loading="isLoading" width="100%" @click="Submit()">Login</el-button>
-                                    </div>
-								</div>
-								<span class="form-text text-center text-muted">
-                                    Dinas Penanaman Modal Dan Pelayanan Terpadu Satu Pintu Provinsi Kepulauan Riau
-                                </span>
-							</div>
-						</div>
-				</el-form>
-			</div>
-			<!-- /content area -->
-
-		</div>
-		<!-- /main content -->
-
-	</div>
+        </el-row>
+    </div>
+</div>
 	<!-- /page content -->
 </template>
 
@@ -121,3 +96,9 @@ export default {
     },
 }
 </script>
+<style scoped>
+.width100{
+    width: 100%;
+    margin-bottom: 10px;
+}
+</style>

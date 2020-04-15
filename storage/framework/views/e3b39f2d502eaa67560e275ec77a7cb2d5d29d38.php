@@ -57,7 +57,7 @@
 <!--header start here -->
 <header class="header navbar fixed-top navbar-expand-md" style="z-index: 1 !important;">
     <div class="container">
-        <a class="navbar-brand logo" href="#">
+        <a class="navbar-brand logo" href="<?php echo e(url('/')); ?>">
             <img src="<?php echo e(url('public/img/logo.png')); ?>" alt="nusa"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">

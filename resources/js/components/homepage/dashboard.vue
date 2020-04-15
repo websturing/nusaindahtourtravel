@@ -40,24 +40,29 @@
               <div class='row'><h5>Kategori</h5></div>
               <div class="row">
                   <div class="produk-item col-md-1">
+                     <a href="ferry">
                     <img :src="url.produk+'/ship.png'" class="img-fluid">
-                      <p class="produk-tittle">Ferry</p>
+                      <p class="produk-tittle">Ferry</p></a>
                   </div>
                   <div class="produk-item col-md-1">
+                    <a href="ranoh">
                     <img :src="url.produk+'/island.png'" class="img-fluid">
-                      <a href="ranoh"><p class="produk-tittle">Ranoh</p></a>
+                      <p class="produk-tittle">Ranoh</p></a></a>
                   </div>
                   <div class="produk-item col-md-1">
-                    <img :src="url.produk+'/car.png'" class="img-fluid">
-                      <p class="produk-tittle">Rental</p>
+                    <a href="rental">
+                     <img :src="url.produk+'/car.png'" class="img-fluid">
+                      <p class="produk-tittle">Rental</p></a>
                   </div>
                   <div class="produk-item col-md-1">
+                    <a href="cruise">
                     <img :src="url.produk+'/cruise.png'" class="img-fluid">
-                      <p class="produk-tittle">Dream Cruise</p>
+                       <p class="produk-tittle">Dream Cruise</p></a>
                   </div>
                   <div class="produk-item col-md-1">
+                    <a href="hotel">
                     <img :src="url.produk+'/rws.png'" class="img-fluid">
-                      <p class="produk-tittle">RWS Sentosa</p>
+                       <p class="produk-tittle">RWS Sentosa</p></a>
                   </div>
               </div>
           </div>

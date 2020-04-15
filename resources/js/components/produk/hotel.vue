@@ -72,22 +72,17 @@
                 <Carousel :perPage="3">
                   <Slide>
                     <div class="SlidePromo">
-                      <img :src="url.promo+'/sea.png'">
+                      <img :src="url.promo+'/1.webp'">
                     </div>
                   </Slide>
                   <Slide>
                     <div class="SlidePromo">
-                      <img :src="url.promo+'/dolphin.jpg'">
+                      <img :src="url.promo+'/2.webp'">
                     </div>
                   </Slide>
                   <Slide>
                     <div class="SlidePromo">
-                      <img :src="url.promo+'/adw.png'">
-                    </div>
-                  </Slide>
-                  <Slide>
-                    <div class="SlidePromo">
-                      <img :src="url.promo+'/universal.png'">
+                      <img :src="url.promo+'/3.webp'">
                     </div>
                   </Slide>
                 </Carousel>

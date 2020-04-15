@@ -67,35 +67,29 @@
       <section class="">
           <div class="container">
             <br/><br/>
-              <div class='row'><h5>Promo Terbaru</h5></div>
-              <section class="">
-              <div class="container">
-              <div class="row">
-                <Carousel :perPage="3">
-                  <Slide>
-                    <div class="SlidePromo">
-                      <img :src="url.promo+'/sea.png'">
-                    </div>
-                  </Slide>
-                  <Slide>
-                    <div class="SlidePromo">
-                      <img :src="url.promo+'/dolphin.jpg'">
-                    </div>
-                  </Slide>
-                  <Slide>
-                    <div class="SlidePromo">
-                      <img :src="url.promo+'/adw.png'">
-                    </div>
-                  </Slide>
-                  <Slide>
-                    <div class="SlidePromo">
-                      <img :src="url.promo+'/universal.png'">
-                    </div>
-                  </Slide>
-                </Carousel>
+              <div class='row'><h5>Result</h5>
+              <div class="col-md-12">
+                <el-row :gutter="5">
+                    <el-col :md="18">
+                      <el-card class="box-card" v-for="(h,hIndex) in ferry" :key="hIndex" style="margin-bottom:10px">
+                        <el-row :gutter="5">
+                          <el-col :md="6">
+                            <img :src="url.ferry+'/majestic-fast-ferry.jpg'" class="img-fluid">
+                          </el-col>
+                          <el-col :md="12">
+                              <div style="padding:7px 2px 0px 10px">
+                                <h5 class="no-margin">{{h.ship}}</h5>
+                                <p class="no-margin font-weight-bold text-primary">{{h.name}}</p>
+                                <p class="no-margin"><i class="icon-compass4">&nbsp;</i> {{h.route}} / <span>{{h.time}}</span> &nbsp; 
+                                    <el-tag type="warning" effect="dark">{{h.el}} Time</el-tag></p>
+                              </div>
+                          </el-col>
+                        </el-row>
+                      </el-card>
+                    </el-col>
+                </el-row>
               </div>
               </div>
-            </section>
           </div>
           <br/><br/>
       </section>
@@ -115,6 +109,7 @@ export default {
        promo : urlBase.urlWeb+'/public/img/promo',
        produk : urlBase.urlWeb+'/public/img/produk',
        background : urlBase.urlWeb+'/public/img/ranoh/header.jpg',
+       ferry : urlBase.urlWeb+'/public/img',
      },
      state1: '',
      links :[],
@@ -138,7 +133,12 @@ export default {
        checkin : null,
        adult  : null,
        child  : null,
-     }
+     },
+     ferry :[
+       { ship : "Majestic Dream", name : 'majestic fast ferry', route : 'Tanjungpinang - Tanah Merah', time : "10.30", el : "IDN"},
+       { ship : "Majestic Liberty", name : 'majestic fast ferry', route : 'Batam Center - Tanah Merah', time : "11.30", el : "IDN"},
+       { ship : "Majestic Wisdom", name : 'majestic fast ferry', route : 'Tanah Merah - Batam Center', time : "10.30", el : "SG"},
+     ]
    }
   },
   methods: {

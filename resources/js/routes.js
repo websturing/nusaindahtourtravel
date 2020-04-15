@@ -6,6 +6,12 @@ import Dashboard from '@/js/components/homepage/dashboard';
 import hotel from '@/js/components/produk/hotel';
 import hotelDetail from '@/js/components/produk/hotel_detail';
 import ferry from '@/js/components/produk/ferry';
+import payment from '@/js/components/payment/payment';
+import rental from '@/js/components/produk/rental';
+import dreamcruise from '@/js/components/produk/dreamcruise';
+import ranoh from '@/js/components/produk/ranoh';
+
+
 
 import notfound404 from '@/js/master/404';
 
@@ -40,6 +46,32 @@ const router = new VueRouter({
             name: 'ferry',
             component: ferry,
         },
+        {
+            path: '/payment',
+            name: 'payment',
+            component: payment,
+        },
+        {
+            path: '/rental',
+            name: 'rental',
+            component: rental,
+        },
+        {
+            path: '/cruise',
+            name: 'cruise',
+            component: dreamcruise,
+        },
+        {
+            path: '/ranoh',
+            name: 'ranoh',
+            component: ranoh,
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: login,
+        },
+
         {
             path: '*',
             name: '404',

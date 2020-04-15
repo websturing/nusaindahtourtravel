@@ -1,66 +1,105 @@
 <template>
     <div>
-      <section class="headlineProduk">
-          <div class="container">
+      <br/><br/><br/><br/>
+        <div class="container">
+          <div class="row"> 
+            <div class="col-md-4">
+              <div class="sidebarData">
+                <div class="form">
+                  <h5 class="no-margin no-padding">Stay in Ranoh Island</h5>
 
-           <div class="form">
-            <h5 class="no-margin no-padding">Finding Hotel</h5>
-            <h6 class="no-margin no-padding">Domestik & Internasional</h6>
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label>Hotel</label>
-                  <div class="row col-md-12">
-                  <el-autocomplete
-                    class="width100"
-                    v-model="state1"
-                    :fetch-suggestions="querySearch"
-                    placeholder="Type Name hotel"
-                  ></el-autocomplete>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label>Check-in / Checkout</label>
-                  <div class="row col-md-12">
-                    <el-date-picker
-                      v-model="form.checkin"
-                      type="daterange"
-                      class="width100"
-                      range-separator="/"
-                      start-placeholder="Start date"
-                      end-placeholder="End date">
-                    </el-date-picker>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="form-group">
-                  <label>People</label>
-                  <div class="row col-md-12">
-                  <el-select v-model="form.people" placeholder="people">
-                    <el-option
-                      v-for="item in options"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value">
-                    </el-option>
-                  </el-select>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="searchproduk">
-                  <el-button type="warning" icon="el-icon-search">Search</el-button>
-                </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>paket</label>
+                        <div class="row col-md-12">
+                        <el-autocomplete
+                          class="width100"
+                          v-model="state1"
+                          :fetch-suggestions="querySearch"
+                          placeholder="Type Name hotel"
+                        ></el-autocomplete>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Check-in / Checkout</label>
+                        <div class="row col-md-12">
+                          <el-date-picker
+                            v-model="form.checkin"
+                            type="daterange"
+                            class="width100"
+                            range-separator="/"
+                            start-placeholder="Start date"
+                            end-placeholder="End date">
+                          </el-date-picker>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Person</label>
+                        <div class="row col-md-12">
+                        <el-select v-model="form.people" placeholder="people">
+                          <el-option
+                            v-for="item in options"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                          </el-option>
+                        </el-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="">
+                        <el-button type="warning" icon="el-icon-search">Search</el-button>
+                      </div>
+                    </div>
+                    <br/>
+                </div> 
               </div>
             </div>
-          </div> 
+            <div class="col-md-8">
+              <h4>Wisata Ranoh Island</h4>
+              <p><i class="icon-calendar"></i>&nbsp;&nbsp;&nbsp; 30 Apr - 1 Mei &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="icon-users2"></i>&nbsp;&nbsp;&nbsp; 1 Person</p>
+              <div class="card">
+                <div class="card-body">
+                  Result : 10 Hotel
+                  <div>
+                    <span><i class="icon-star-full2">&nbsp;</i>Recomended</span>
+                    <el-divider direction="vertical"></el-divider>
+                    <span><i class="icon-sort-amount-asc">&nbsp;</i> Lowest</span>
+                    <el-divider direction="vertical"></el-divider>
+                    <span><i class="icon-sort-amount-desc">&nbsp;</i>Highest</span>
+                  </div>
+                </div>
+              </div>
+              <br/>
+              <div class="card hotelCard" v-for="(h,hIndex) in data.hotel" :key="hIndex">
+                <el-row :gutter="5">
+                  <el-col :md="6">
+                    <img :src="url.hotel+'/'+( hIndex+1 )+'.jpg'" class="img-fluid">
+                  </el-col>
+                  <el-col :md="12">
+                      <div class="card-body">
+                        <h5>{{h.name}} {{hIndex+1}}</h5>
+                        <el-rate v-model="h.rating"></el-rate>
+                        <p><i class="icon-map4">&nbsp;</i> Singapore - singapore</p>
+                      </div>
+                  </el-col>
+                  <el-col :md="6">
+                      <div class="card-body">
+                        <h5>{{h.cost}}</h5>
+                        <a href="payment"><el-button type="primary" icon="icon-bookmarks">Book</el-button></a>
+                      </div>
+                  </el-col>
+                </el-row>
+              </div>
+            </div>
           </div>
-      </section>
-      
+      </div>
+
 
       <section class="">
           <div class="container">
@@ -113,6 +152,7 @@ export default {
        promo : urlBase.urlWeb+'/public/img/promo',
        produk : urlBase.urlWeb+'/public/img/produk',
        background : urlBase.urlWeb+'/public/img/ranoh/header.jpg',
+       hotel : urlBase.urlWeb+'/public/img/ranoh',
      },
      state1: '',
      links :[],
@@ -135,6 +175,16 @@ export default {
      form :{
        checkin : null,
        people  : null
+     },
+     data :{
+       hotel :[
+         { name : "Paket Tour", rating : 4, cost : "1.90900" },
+         { name : "Paket Tour", rating : 5, cost : "2.50900" },
+         { name : "Paket Tour", rating : 3, cost : "1.03900" },
+         { name : "Paket Tour", rating : 4, cost : "2.00900" },
+         { name : "Paket Tour", rating : 4, cost : "1.60900" },
+         { name : "Paket Tour", rating : 3, cost : "1.00900" },
+       ]
      }
    }
   },

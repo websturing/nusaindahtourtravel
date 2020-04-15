@@ -92,7 +92,7 @@
                   <el-col :md="6">
                       <div class="card-body">
                         <h5>{{h.cost}}</h5>
-                        <el-button type="primary" icon="icon-bookmarks">Detail</el-button>
+                        <a href="payment"><el-button type="primary" icon="icon-bookmarks">Book</el-button></a>
                       </div>
                   </el-col>
                 </el-row>
